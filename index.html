@@ -1,0 +1,22 @@
+<html>
+  <head></head>
+  <body>
+    <h1>Testing value of Progress and Meter Elements</h1>
+
+    <h2>Inputs</h2>
+    <p><code>cy.should('have.value', value)</code> always passes, regardless of whether expected value in test is a String or Number</p>
+    <p><label for="textInput">Text Input:</label> <input type="text" id="textInput" value="50" /></p>
+    <p><label for="numInput">Number Input:</label> <input type="number" id="numInput" value="50" /></p>
+    <p><label for="rangeInput">Range Input:</label> <input type="range" id="rangeInput" value="50" /></p>
+
+    <h2>Progress</h2>
+    <p><code>cy.should('have.value', value)</code> always fails, regardless of whether expected value in test is a String or Number</p>
+    <p><code>cy.should('have.attr', 'value', value)</code> always passes, regardless of whether expected value in test is a String or Number</p>
+    <progress id="progressEl" max="100" value="50">50%</progress>
+
+    <h2>Meter</h2>
+    <p><code>cy.should('have.value', value)</code> always fails, regardless of whether expected value in test is a String or Number</p>
+    <p><code>cy.should('have.attr', 'value', value)</code> always passes, regardless of whether expected value in test is a String or Number</p>
+    <meter id="meterEl" min="0" max="100" value="50">50%</meter>
+  </body>
+</html>
